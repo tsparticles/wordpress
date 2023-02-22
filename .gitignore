@@ -29,7 +29,5 @@ node_modules/
 # dotenv environment variables file
 .env
 
-node_modules
 build
-.DS_Store
-.idea
+*.zip
