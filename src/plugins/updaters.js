@@ -4,18 +4,6 @@ import { handlePlugin, transformLoadableObject } from '../utils';
 const group = __('Updaters'),
 	updaters = [
 		{
-			name: 'updater-angle',
-			description: __('Angle'),
-			group,
-			load: async (engine) => {
-				const { loadAngleUpdater } = await import(
-					'tsparticles-updater-angle'
-					);
-
-				await loadAngleUpdater(engine);
-			},
-		},
-		{
 			name: 'updater-color',
 			description: __('Color'),
 			group,
@@ -109,6 +97,18 @@ const group = __('Updaters'),
 					);
 
 				await loadRollUpdater(engine);
+			},
+		},
+		{
+			name: 'updater-rotate',
+			description: __('Rotate'),
+			group,
+			load: async (engine) => {
+				const { loadRotateUpdater } = await import(
+					'tsparticles-updater-rotate'
+					);
+
+				await loadRotateUpdater(engine);
 			},
 		},
 		{

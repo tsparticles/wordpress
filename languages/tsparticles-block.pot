@@ -294,10 +294,6 @@ msgstr ""
 msgid "Updaters"
 msgstr ""
 
-#. Angle
-msgid "Angle"
-msgstr ""
-
 #. Color
 msgid "Color"
 msgstr ""
@@ -332,6 +328,10 @@ msgstr ""
 
 #. Roll
 msgid "Roll"
+msgstr ""
+
+#. Rotate
+msgid "Rotate"
 msgstr ""
 
 #. Size

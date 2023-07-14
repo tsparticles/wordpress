@@ -291,10 +291,6 @@
 	  "type": "boolean",
 	  "default": false
 	},
-	"updater-angle": {
-	  "type": "boolean",
-	  "default": false
-	},
 	"updater-color": {
 	  "type": "boolean",
 	  "default": false
@@ -324,6 +320,10 @@
 	  "default": false
 	},
 	"updater-roll": {
+	  "type": "boolean",
+	  "default": false
+	},
+	"updater-rotate": {
 	  "type": "boolean",
 	  "default": false
 	},
