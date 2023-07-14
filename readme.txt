@@ -61,6 +61,109 @@ Nothing to say
 
 == Changelog ==
 
+= 2.11.0
+
+## Bug Fixes
+
+- Removed console log, closes #5003
+- Fixed getPositionOrSize function
+- Fixed some shapes
+
+## New Features
+
+- Added refresh flag for loading plugins, this will prevent multiple refresh of the instance
+- Added animated gif support to image drawer (use it with caution, gifs are heavy)
+- Added setLogger and getLogger functions, this will prevent `console.log` mistakenly left in the code.
+- Added export plugins, previous export functions were removed (barely used), and a 3 new plugins are available. The available exports plugin are: Image, JSON, Video. The first two were already present, the third one is new.
+- Added new rounded polygon shape
+
+## Other Changes
+
+- Removed fallbacks for requestAnimationFrame, they're useless.
+- Added tree shaking capabilities
+- Added ESLint `no-console` rule, to avoid other issues likes #5003, `getLogger` must be used when needed some logs.
+
+### How do `setLogger` and `getLogger` functions work?
+
+If you want to customize the log of `tsParticles` you can call `setLogger(logger)` function, passing a `ILogger` object.
+
+The `setLogger` function prevents `undefined` properties assigning the default one.
+
+```ts
+setLogger({
+    debug: console.debug,
+    error: console.error,
+    info: console.info,
+    log: console.log,
+    verbose: console.log,
+    warning: console.warn,
+});
+```
+
+This assigns all the log functions console functions, but you can use empty functions (`() => {}`) to disable every function.
+
+If there's a `console.log` left like in #3552, #3528 or #5003, you can disable the `log` property of the `setLogger` parameter to get rid of it, so you don't have to wait the next release.
+
+The `getLogger` function, returns the object set using `setLogger`, every plugin *MUST* use `getLogger()` for logging things, so mistakes can be fixed easily, even errors can be muted or redirected to your favorite logging platform.
+
+If you want to log something use this code:
+
+```ts
+getLogger().log("tsParticles is awesome");
+```
+
+= 2.10.0
+
+## New Features
+
+- Added max speed value to collisions options
+- Added range values to spiral shape options, added `widthFactor` value
+- Added new arrow shape
+- Added new cog shape
+- Added mode to more coordinates options
+- Added error prefix to standardize error messages
+- Added image preload and name to shape options. Preload an image with a name, so it can be retrieved using only that in the options.
+- Added compatibility with another old particles.js library (deprecated but some samples can be found around)
+- Added new path plugin, using svg paths as a source
+- Added delta to path generators
+- Added delay options to particles values animations (`opacity`, `size`, `color`, `stroke`), closes #4985
+
+## Bug Fixes
+
+- Fixed typo in fireworks bundle exported types
+- Fixed presets without particles count
+- Improved container reset
+- Fixed window resize fired during the initialization
+- Improved spiral shape
+- Fixed `ICoordinates` types
+- Fixed some load functions that weren't async
+- Fixed some shapes particle init
+
+## Other Changes
+
+- Improved image shape
+- Changed despawn confetti action using opacity animation, was life duration, closes #4978
+- All the components for Front End frameworks were removed from this repository, each one now has its own repository. This is mainly for maintainability. It's easier to support multiple Front End frameworks versions in a dedicated repository instead of a multipurpose monorepository. Vue.js 2.x and 3.x were kept split because they have many differences.
+    - Angular (`ng-particles`): https://github.com/tsparticles/angular
+    - Astro (`astro-particles`): https://github.com/tsparticles/astro
+    - Ember (`ember-tsparticles`): https://github.com/tsparticles/ember
+    - Inferno (`inferno-particles`): https://github.com/tsparticles/inferno
+    - jQuery (`jquery-particles`): https://github.com/tsparticles/jquery
+    - Lit (`lit-tsparticles`): https://github.com/tsparticles/lit *(WIP)*
+    - Preact (`preact-particles`): https://github.com/tsparticles/preact
+    - React (`react-particles`): https://github.com/tsparticles/react
+    - Riot (`riot-particles`): https://github.com/tsparticles/riot
+    - Solid (`solid-particles`): https://github.com/tsparticles/solid
+    - Stencil (`stencil-particles): https://github.com/tsparticles/stencil *(WIP)*
+    - Svelte (`svelte-particles`): https://github.com/tsparticles/svelte
+    - Vue.js 2.x (`vue2-particles`): https://github.com/tsparticles/vue2
+    - Vue.js 3.x (`vue3-particles`): https://github.com/tsparticles/vue3
+    - Web Components (`web-particles`): https://github.com/tsparticles/webcomponents
+    - WordPress (`wordpress-particles`): https://github.com/tsparticles/wordpress
+- Removed all presets from this repository for a single one (<https://github.com/tsparticles/presets>) in the @tsparticles organization, this will make easier to contribute to specific presets or create new ones.
+- Added global variables to window object, so they are always accessible
+- Migrating output to ES2021, it's widely used and supported
+
 = 2.9.3
 
 ## Bug Fixes

@@ -1,106 +1,108 @@
-import { __ } from '@wordpress/i18n';
-import { handlePlugin, transformLoadableObject } from '../../utils';
+import { __ } from "@wordpress/i18n";
+import { handlePlugin, transformLoadableObject } from "../../utils";
 import { getEasings } from "./easings";
+import { getExports } from "./exports";
 
-const group = __('Plugins'),
+const group = __("Plugins"),
 	plugins = [
 		{
-			name: 'plugin-absorbers',
-			description: __('Absorbers'),
+			name: "plugin-absorbers",
+			description: __("Absorbers"),
 			group,
 			load: async (engine) => {
 				const { loadAbsorbersPlugin } = await import(
-					'tsparticles-plugin-absorbers'
+					"tsparticles-plugin-absorbers"
 					);
 
 				await loadAbsorbersPlugin(engine);
-			},
+			}
 		},
 		{
-			name: 'plugin-canvas-mask',
-			description: `${__('Canvas')} ${__('Mask')}`,
+			name: "plugin-canvas-mask",
+			description: `${__("Canvas")} ${__("Mask")}`,
 			group,
 			load: async (engine) => {
 				const { loadCanvasMaskPlugin } = await import(
-					'tsparticles-plugin-canvas-mask'
+					"tsparticles-plugin-canvas-mask"
 					);
 
 				await loadCanvasMaskPlugin(engine);
-			},
+			}
 		},
-		...getEasings(group, (name) => `${__('Easing')} ${name}`),
+		...getEasings(group, (name) => `${__("Easing")} ${name}`),
 		{
-			name: 'plugin-emitters',
-			description: __('Emitters'),
+			name: "plugin-emitters",
+			description: __("Emitters"),
 			group,
 			load: async (engine) => {
 				const { loadEmittersPlugin } = await import(
-					'tsparticles-plugin-emitters'
+					"tsparticles-plugin-emitters"
 					);
 
 				await loadEmittersPlugin(engine);
-			},
+			}
 		},
+		...getExports(group, (name) => `${__("Export")} ${name}`),
 		{
-			name: 'plugin-hsv-color',
-			description: `${__('HSV')} ${__('Color')}`,
+			name: "plugin-hsv-color",
+			description: `${__("HSV")} ${__("Color")}`,
 			group,
 			load: async () => {
 				const { loadHsvColorPlugin } = await import(
-					'tsparticles-plugin-hsv-color'
+					"tsparticles-plugin-hsv-color"
 					);
 
 				await loadHsvColorPlugin();
-			},
+			}
 		},
 		{
-			name: 'plugin-infection',
-			description: __('Infection'),
+			name: "plugin-infection",
+			description: __("Infection"),
 			group,
 			load: async (engine) => {
 				const { loadInfectionPlugin } = await import(
-					'tsparticles-plugin-infection'
+					"tsparticles-plugin-infection"
 					);
 
 				await loadInfectionPlugin(engine);
-			},
+			}
 		},
 		{
-			name: 'plugin-motion',
-			description: __('Motion'),
+			name: "plugin-motion",
+			description: __("Motion"),
 			group,
 			load: async (engine) => {
 				const { loadMotionPlugin } = await import(
-					'tsparticles-plugin-motion'
+					"tsparticles-plugin-motion"
 					);
 
 				await loadMotionPlugin(engine);
-			},
+			}
 		},
 		{
-			name: 'plugin-polygon-mask',
-			description: `${__('Polygon')} ${__('Mask')}`,
+			name: "plugin-polygon-mask",
+			description: `${__("Polygon")} ${__("Mask")}`,
 			group,
 			load: async (engine) => {
 				const { loadPolygonMaskPlugin } = await import(
-					'tsparticles-plugin-polygon-mask'
+					"tsparticles-plugin-polygon-mask"
 					);
 
 				await loadPolygonMaskPlugin(engine);
-			},
+			}
 		},
 		{
-			name: 'plugin-sounds',
-			description: __('Sounds'),
+			name: "plugin-sounds",
+			description: __("Sounds"),
 			group,
 			load: async (engine) => {
 				const { loadSoundsPlugin } = await import(
-					'tsparticles-plugin-sounds'
+					"tsparticles-plugin-sounds"
 					);
 
 				await loadSoundsPlugin(engine);
-			},
-		},
+			}
+		}
 	];
 
 export function getPlugins() {

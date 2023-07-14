@@ -4,6 +4,18 @@ import { handlePlugin, transformLoadableObject } from '../utils';
 const group = __('Shapes'),
 	shapes = [
 		{
+			name: 'shape-arrow',
+			description: __('Arrow'),
+			group,
+			load: async (engine) => {
+				const { loadArrowShape } = await import(
+					'tsparticles-shape-arrow'
+					);
+
+				await loadArrowShape(engine);
+			},
+		},
+		{
 			name: 'shape-bubble',
 			description: __('Bubble'),
 			group,
@@ -37,6 +49,18 @@ const group = __('Shapes'),
 					);
 
 				await loadCircleShape(engine);
+			},
+		},
+		{
+			name: 'shape-cog',
+			description: __('Cog'),
+			group,
+			load: async (engine) => {
+				const { loadCogShape } = await import(
+					'tsparticles-shape-cog'
+					);
+
+				await loadCogShape(engine);
 			},
 		},
 		{
@@ -88,6 +112,18 @@ const group = __('Shapes'),
 			},
 		},
 		{
+			name: 'shape-path',
+			description: __('Path'),
+			group,
+			load: async (engine) => {
+				const { loadPathShape } = await import(
+					'tsparticles-shape-path'
+					);
+
+				await loadPathShape(engine);
+			},
+		},
+		{
 			name: 'shape-polygon',
 			description: __('Polygon'),
 			group,
@@ -97,6 +133,18 @@ const group = __('Shapes'),
 					);
 
 				await loadPolygonShape(engine);
+			},
+		},
+		{
+			name: 'shape-rounded-polygon',
+			description: `${__('Rounded')} ${__('Polygon')}`,
+			group,
+			load: async (engine) => {
+				const { loadRoundedPolygonShape } = await import(
+					'tsparticles-shape-rounded-polygon'
+					);
+
+				await loadRoundedPolygonShape(engine);
 			},
 		},
 		{

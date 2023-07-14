@@ -106,6 +106,10 @@ msgstr ""
 msgid "Simplex"
 msgstr ""
 
+#. SVG
+msgid "SVG"
+msgstr ""
+
 #. Plugins
 msgid "Plugins"
 msgstr ""
@@ -160,6 +164,22 @@ msgstr ""
 
 #. Emitters
 msgid "Emitters"
+msgstr ""
+
+#. Export
+msgid "Export"
+msgstr ""
+
+#. Image
+msgid "Image"
+msgstr ""
+
+#. JSON
+msgid "JSON"
+msgstr ""
+
+#. Video
+msgid "Video"
 msgstr ""
 
 #. HSV
