@@ -5,7 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
-import { tsParticles } from 'tsparticles-engine';
+import { tsParticles } from '@tsparticles/engine';
 import { getAllPlugins, loadWordpressParticles } from './load';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', async () => {
  */
 export default function save({ attributes }) {
 	setTimeout(async () => {
-		await tsParticles.load(attributes.id, JSON.parse(attributes.options));
+		await tsParticles.load({
+			id: attributes.id,
+			options: JSON.parse(attributes.options)
+		});
 	});
 
 	const width = attributes.width ? attributes.width : '100%',

@@ -9,7 +9,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadBigCirclesPreset } = await import(
-					'tsparticles-preset-big-circles'
+					'@tsparticles/preset-big-circles'
 					);
 
 				await loadBigCirclesPreset(engine);
@@ -21,7 +21,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadBubblesPreset } = await import(
-					'tsparticles-preset-bubbles'
+					'@tsparticles/preset-bubbles'
 					);
 
 				await loadBubblesPreset(engine);
@@ -33,7 +33,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadConfettiPreset } = await import(
-					'tsparticles-preset-confetti'
+					'@tsparticles/preset-confetti'
 					);
 
 				await loadConfettiPreset(engine);
@@ -45,7 +45,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadFirePreset } = await import(
-					'tsparticles-preset-fire'
+					'@tsparticles/preset-fire'
 					);
 
 				await loadFirePreset(engine);
@@ -57,7 +57,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadFireflyPreset } = await import(
-					'tsparticles-preset-firefly'
+					'@tsparticles/preset-firefly'
 					);
 
 				await loadFireflyPreset(engine);
@@ -69,7 +69,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadFireworksPreset } = await import(
-					'tsparticles-preset-fireworks'
+					'@tsparticles/preset-fireworks'
 					);
 
 				await loadFireworksPreset(engine);
@@ -81,10 +81,22 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadFountainPreset } = await import(
-					'tsparticles-preset-fountain'
+					'@tsparticles/preset-fountain'
 					);
 
 				await loadFountainPreset(engine);
+			},
+		},
+		{
+			name: 'preset-hyperspace',
+			description: __('Hyperspace'),
+			group,
+			load: async (engine) => {
+				const { loadHyperspacePreset } = await import(
+					'@tsparticles/preset-hyperspace'
+					);
+
+				await loadHyperspacePreset(engine);
 			},
 		},
 		{
@@ -93,7 +105,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadLinksPreset } = await import(
-					'tsparticles-preset-links'
+					'@tsparticles/preset-links'
 					);
 
 				await loadLinksPreset(engine);
@@ -105,7 +117,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadSeaAnemonePreset } = await import(
-					'tsparticles-preset-sea-anemone'
+					'@tsparticles/preset-sea-anemone'
 					);
 
 				await loadSeaAnemonePreset(engine);
@@ -117,10 +129,22 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadSnowPreset } = await import(
-					'tsparticles-preset-snow'
+					'@tsparticles/preset-snow'
 					);
 
 				await loadSnowPreset(engine);
+			},
+		},
+		{
+			name: 'preset-squares',
+			description: __('Squares'),
+			group,
+			load: async (engine) => {
+				const { loadSquaresPreset } = await import(
+					'@tsparticles/preset-squares'
+					);
+
+				await loadSquaresPreset(engine);
 			},
 		},
 		{
@@ -129,7 +153,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadStarsPreset } = await import(
-					'tsparticles-preset-stars'
+					'@tsparticles/preset-stars'
 					);
 
 				await loadStarsPreset(engine);
@@ -141,7 +165,7 @@ const group = __('Presets'),
 			group,
 			load: async (engine) => {
 				const { loadTrianglesPreset } = await import(
-					'tsparticles-preset-triangles'
+					'@tsparticles/preset-triangles'
 					);
 
 				await loadTrianglesPreset(engine);

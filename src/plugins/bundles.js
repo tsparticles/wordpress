@@ -18,9 +18,29 @@ const group = __('Bundles'),
 			description: `tsParticles ${__('Slim')}`,
 			group,
 			load: async (engine) => {
-				const { loadSlim } = await import('tsparticles-slim');
+				const { loadSlim } = await import('@tsparticles/slim');
 
 				await loadSlim(engine);
+			},
+		},
+		{
+			name: 'bundle-basic',
+			description: `tsParticles ${__('Basic')}`,
+			group,
+			load: async (engine) => {
+				const { loadBasic } = await import('@tsparticles/basic');
+
+				await loadBasic(engine);
+			},
+		},
+		{
+			name: 'bundle-all',
+			description: `tsParticles ${__('All')}`,
+			group,
+			load: async (engine) => {
+				const { loadAll } = await import('@tsparticles/all');
+
+				await loadAll(engine);
 			},
 		},
 		{
@@ -28,7 +48,7 @@ const group = __('Bundles'),
 			description: `tsParticles-Particles.js ${__('interoperability')}`,
 			group,
 			load: async (engine) => {
-				const { initPjs } = await import('tsparticles-particles.js');
+				const { initPjs } = await import('@tsparticles/pjs');
 
 				await initPjs(engine);
 			},

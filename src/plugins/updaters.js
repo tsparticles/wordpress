@@ -9,7 +9,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadColorUpdater } = await import(
-					'tsparticles-updater-color'
+					'@tsparticles/updater-color'
 					);
 
 				await loadColorUpdater(engine);
@@ -21,7 +21,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadDestroyUpdater } = await import(
-					'tsparticles-updater-destroy'
+					'@tsparticles/updater-destroy'
 					);
 
 				await loadDestroyUpdater(engine);
@@ -33,7 +33,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadGradientUpdater } = await import(
-					'tsparticles-updater-gradient'
+					'@tsparticles/updater-gradient'
 					);
 
 				await loadGradientUpdater(engine);
@@ -45,7 +45,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadLifeUpdater } = await import(
-					'tsparticles-updater-life'
+					'@tsparticles/updater-life'
 					);
 
 				await loadLifeUpdater(engine);
@@ -57,7 +57,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadOpacityUpdater } = await import(
-					'tsparticles-updater-opacity'
+					'@tsparticles/updater-opacity'
 					);
 
 				await loadOpacityUpdater(engine);
@@ -69,7 +69,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadOrbitUpdater } = await import(
-					'tsparticles-updater-orbit'
+					'@tsparticles/updater-orbit'
 					);
 
 				await loadOrbitUpdater(engine);
@@ -81,7 +81,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadOutModesUpdater } = await import(
-					'tsparticles-updater-out-modes'
+					'@tsparticles/updater-out-modes'
 					);
 
 				await loadOutModesUpdater(engine);
@@ -93,7 +93,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadRollUpdater } = await import(
-					'tsparticles-updater-roll'
+					'@tsparticles/updater-roll'
 					);
 
 				await loadRollUpdater(engine);
@@ -105,7 +105,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadRotateUpdater } = await import(
-					'tsparticles-updater-rotate'
+					'@tsparticles/updater-rotate'
 					);
 
 				await loadRotateUpdater(engine);
@@ -117,7 +117,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadSizeUpdater } = await import(
-					'tsparticles-updater-size'
+					'@tsparticles/updater-size'
 					);
 
 				await loadSizeUpdater(engine);
@@ -129,7 +129,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadStrokeColorUpdater } = await import(
-					'tsparticles-updater-stroke-color'
+					'@tsparticles/updater-stroke-color'
 					);
 
 				await loadStrokeColorUpdater(engine);
@@ -141,7 +141,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadTiltUpdater } = await import(
-					'tsparticles-updater-tilt'
+					'@tsparticles/updater-tilt'
 					);
 
 				await loadTiltUpdater(engine);
@@ -153,7 +153,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadTwinkleUpdater } = await import(
-					'tsparticles-updater-twinkle'
+					'@tsparticles/updater-twinkle'
 					);
 
 				await loadTwinkleUpdater(engine);
@@ -165,7 +165,7 @@ const group = __('Updaters'),
 			group,
 			load: async (engine) => {
 				const { loadWobbleUpdater } = await import(
-					'tsparticles-updater-wobble'
+					'@tsparticles/updater-wobble'
 					);
 
 				await loadWobbleUpdater(engine);

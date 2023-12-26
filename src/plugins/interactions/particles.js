@@ -8,7 +8,7 @@ export function getParticlesInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadParticlesAttractInteraction } = await import(
-					'tsparticles-interaction-particles-attract'
+					'@tsparticles/interaction-particles-attract'
 				);
 
 				await loadParticlesAttractInteraction(engine);
@@ -20,7 +20,7 @@ export function getParticlesInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadParticlesCollisionsInteraction } = await import(
-					'tsparticles-interaction-particles-collisions'
+					'@tsparticles/interaction-particles-collisions'
 				);
 
 				await loadParticlesCollisionsInteraction(engine);
@@ -32,7 +32,7 @@ export function getParticlesInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadParticlesLinksInteraction } = await import(
-					'tsparticles-interaction-particles-links'
+					'@tsparticles/interaction-particles-links'
 				);
 
 				await loadParticlesLinksInteraction(engine);
@@ -44,7 +44,7 @@ export function getParticlesInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadParticlesRepulseInteraction } = await import(
-					'tsparticles-interaction-particles-repulse'
+					'@tsparticles/interaction-particles-repulse'
 				);
 
 				await loadParticlesRepulseInteraction(engine);

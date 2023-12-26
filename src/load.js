@@ -1,4 +1,5 @@
 import { getBundles, handleBundles } from './plugins/bundles';
+import { getEffects, handleEffects } from "./plugins/effects.js";
 import { getInteractions, handleInteractions } from './plugins/interactions';
 import { getMovers, handleMovers } from './plugins/movers';
 import { getPaths, handlePaths } from './plugins/paths';
@@ -11,6 +12,7 @@ export function getAllPlugins(attributes) {
 	const allPlugins = [];
 
 	allPlugins.push(...getBundles());
+	allPlugins.push(...getEffects());
 	allPlugins.push(...getInteractions());
 	allPlugins.push(...getMovers());
 	allPlugins.push(...getPaths());
@@ -34,6 +36,7 @@ export async function loadWordpressParticles(engine, plugins) {
 		const pluginName = typeof plugin === 'string' ? plugin : plugin.name;
 
 		if (await handleBundles(pluginName, engine)) return;
+		if (await handleEffects(pluginName, engine)) return;
 		if (await handleInteractions(pluginName, engine)) return;
 		if (await handleMovers(pluginName, engine)) return;
 		if (await handlePaths(pluginName, engine)) return;

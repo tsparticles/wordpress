@@ -20,7 +20,7 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { tsParticles } from 'tsparticles-engine';
+import { tsParticles } from '@tsparticles/engine';
 import { getAllPlugins, loadWordpressParticles } from './load';
 
 /**

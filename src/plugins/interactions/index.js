@@ -15,7 +15,7 @@ const group = __('Interactions'),
 			group,
 			load: async (engine) => {
 				const { loadLightInteraction } = await import(
-					'tsparticles-interaction-light'
+					'@tsparticles/interaction-light'
 					);
 
 				await loadLightInteraction(engine);

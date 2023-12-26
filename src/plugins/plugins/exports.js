@@ -8,7 +8,7 @@ export function getExports(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExportImagePlugin } = await import(
-					"tsparticles-plugin-export-image"
+					"@tsparticles/plugin-export-image"
 					);
 
 				await loadExportImagePlugin(engine);
@@ -20,7 +20,7 @@ export function getExports(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExportJSONPlugin } = await import(
-					"tsparticles-plugin-export-json"
+					"@tsparticles/plugin-export-json"
 					);
 
 				await loadExportJSONPlugin(engine);
@@ -32,7 +32,7 @@ export function getExports(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExportVideoPlugin } = await import(
-					"tsparticles-plugin-export-video"
+					"@tsparticles/plugin-export-video"
 					);
 
 				await loadExportVideoPlugin(engine);

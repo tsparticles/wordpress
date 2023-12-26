@@ -4,12 +4,24 @@ import { handlePlugin, transformLoadableObject } from "../utils";
 const group = __("Paths"),
 	paths = [
 		{
+			name: "path-curl-noise",
+			description: `${__("Curl")} ${__("Noise")}`,
+			group,
+			load: async (engine) => {
+				const { loadCurlNoisePath } = await import(
+					"@tsparticles/path-curl-noise"
+					);
+
+				await loadCurlNoisePath(engine);
+			}
+		},
+		{
 			name: "path-curves",
 			description: __("Curves"),
 			group,
 			load: async (engine) => {
 				const { loadCurvesPath } = await import(
-					"tsparticles-path-curves"
+					"@tsparticles/path-curves"
 					);
 
 				await loadCurvesPath(engine);
@@ -21,7 +33,7 @@ const group = __("Paths"),
 			group,
 			load: async (engine) => {
 				const { loadPerlinNoisePath } = await import(
-					"tsparticles-path-perlin-noise"
+					"@tsparticles/path-perlin-noise"
 					);
 
 				await loadPerlinNoisePath(engine);
@@ -33,7 +45,7 @@ const group = __("Paths"),
 			group,
 			load: async (engine) => {
 				const { loadPolygonPath } = await import(
-					"tsparticles-path-polygon"
+					"@tsparticles/path-polygon"
 					);
 
 				await loadPolygonPath(engine);
@@ -45,7 +57,7 @@ const group = __("Paths"),
 			group,
 			load: async (engine) => {
 				const { loadSimplexNoisePath } = await import(
-					"tsparticles-path-simplex-noise"
+					"@tsparticles/path-simplex-noise"
 					);
 
 				await loadSimplexNoisePath(engine);
@@ -57,7 +69,7 @@ const group = __("Paths"),
 			group,
 			load: async (engine) => {
 				const { loadSVGPath } = await import(
-					"tsparticles-path-svg"
+					"@tsparticles/path-svg"
 					);
 
 				await loadSVGPath(engine);

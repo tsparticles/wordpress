@@ -9,22 +9,10 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadArrowShape } = await import(
-					'tsparticles-shape-arrow'
+					'@tsparticles/shape-arrow'
 					);
 
 				await loadArrowShape(engine);
-			},
-		},
-		{
-			name: 'shape-bubble',
-			description: __('Bubble'),
-			group,
-			load: async (engine) => {
-				const { loadBubbleShape } = await import(
-					'tsparticles-shape-bubble'
-					);
-
-				await loadBubbleShape(engine);
 			},
 		},
 		{
@@ -33,7 +21,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadCardsShape } = await import(
-					'tsparticles-shape-cards'
+					'@tsparticles/shape-cards'
 					);
 
 				await loadCardsShape(engine);
@@ -45,7 +33,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadCircleShape } = await import(
-					'tsparticles-shape-circle'
+					'@tsparticles/shape-circle'
 					);
 
 				await loadCircleShape(engine);
@@ -57,10 +45,22 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadCogShape } = await import(
-					'tsparticles-shape-cog'
+					'@tsparticles/shape-cog'
 					);
 
 				await loadCogShape(engine);
+			},
+		},
+		{
+			name: 'shape-emoji',
+			description: __('Emoji'),
+			group,
+			load: async (engine) => {
+				const { loadEmojiShape } = await import(
+					'@tsparticles/shape-emoji'
+					);
+
+				await loadEmojiShape(engine);
 			},
 		},
 		{
@@ -69,7 +69,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadHeartShape } = await import(
-					'tsparticles-shape-heart'
+					'@tsparticles/shape-heart'
 					);
 
 				await loadHeartShape(engine);
@@ -81,7 +81,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadImageShape } = await import(
-					'tsparticles-shape-image'
+					'@tsparticles/shape-image'
 					);
 
 				await loadImageShape(engine);
@@ -93,22 +93,10 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadLineShape } = await import(
-					'tsparticles-shape-line'
+					'@tsparticles/shape-line'
 					);
 
 				await loadLineShape(engine);
-			},
-		},
-		{
-			name: 'shape-multiline-text',
-			description: `${__('Multiline')} ${__('Text')}`,
-			group,
-			load: async (engine) => {
-				const { loadMultilineTextShape } = await import(
-					'tsparticles-shape-multiline-text'
-					);
-
-				await loadMultilineTextShape(engine);
 			},
 		},
 		{
@@ -117,7 +105,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadPathShape } = await import(
-					'tsparticles-shape-path'
+					'@tsparticles/shape-path'
 					);
 
 				await loadPathShape(engine);
@@ -129,7 +117,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadPolygonShape } = await import(
-					'tsparticles-shape-polygon'
+					'@tsparticles/shape-polygon'
 					);
 
 				await loadPolygonShape(engine);
@@ -141,7 +129,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadRoundedPolygonShape } = await import(
-					'tsparticles-shape-rounded-polygon'
+					'@tsparticles/shape-rounded-polygon'
 					);
 
 				await loadRoundedPolygonShape(engine);
@@ -153,7 +141,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadRoundedRectShape } = await import(
-					'tsparticles-shape-rounded-rect'
+					'@tsparticles/shape-rounded-rect'
 					);
 
 				await loadRoundedRectShape(engine);
@@ -165,7 +153,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadSpiralShape } = await import(
-					'tsparticles-shape-spiral'
+					'@tsparticles/shape-spiral'
 					);
 
 				await loadSpiralShape(engine);
@@ -177,7 +165,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadSquareShape } = await import(
-					'tsparticles-shape-square'
+					'@tsparticles/shape-square'
 					);
 
 				await loadSquareShape(engine);
@@ -189,7 +177,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadStarShape } = await import(
-					'tsparticles-shape-star'
+					'@tsparticles/shape-star'
 					);
 
 				await loadStarShape(engine);
@@ -201,7 +189,7 @@ const group = __('Shapes'),
 			group,
 			load: async (engine) => {
 				const { loadTextShape } = await import(
-					'tsparticles-shape-text'
+					'@tsparticles/shape-text'
 					);
 
 				await loadTextShape(engine);

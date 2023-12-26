@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const packageInfo = require('../package.json');
 const readmeFilePath = './readme.txt';
+const blockPath = '../src/block.json';
 
 fs.readFile(readmeFilePath, function (error, data) {
 	if (error) {
@@ -17,6 +18,25 @@ fs.readFile(readmeFilePath, function (error, data) {
 	fs.writeFile(readmeFilePath, newValue, 'utf-8', function () {
 		console.log(
 			`readme updated successfully to version ${packageInfo.version}`
+		);
+	});
+});
+
+fs.readFile(blockPath, function (error, data) {
+	if (error) {
+		throw error;
+	}
+
+	const text = data.toString();
+
+	const newValue = text.replace(
+		/\"version\": \"\S+\"/gm,
+		`"version": "${packageInfo.version}"`
+	);
+
+	fs.writeFile(blockPath, newValue, 'utf-8', function () {
+		console.log(
+			`block file updated successfully to version ${packageInfo.version}`
 		);
 	});
 });

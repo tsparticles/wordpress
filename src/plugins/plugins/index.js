@@ -2,6 +2,7 @@ import { __ } from "@wordpress/i18n";
 import { handlePlugin, transformLoadableObject } from "../../utils";
 import { getEasings } from "./easings";
 import { getExports } from "./exports";
+import { getEmitterShapes } from "./emittersShapes.js";
 
 const group = __("Plugins"),
 	plugins = [
@@ -11,7 +12,7 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadAbsorbersPlugin } = await import(
-					"tsparticles-plugin-absorbers"
+					"@tsparticles/plugin-absorbers"
 					);
 
 				await loadAbsorbersPlugin(engine);
@@ -23,7 +24,7 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadCanvasMaskPlugin } = await import(
-					"tsparticles-plugin-canvas-mask"
+					"@tsparticles/plugin-canvas-mask"
 					);
 
 				await loadCanvasMaskPlugin(engine);
@@ -36,12 +37,13 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadEmittersPlugin } = await import(
-					"tsparticles-plugin-emitters"
+					"@tsparticles/plugin-emitters"
 					);
 
 				await loadEmittersPlugin(engine);
 			}
 		},
+		...getEmitterShapes(group, (name) => `${__("Emitters")} ${__("Shape")} ${name}`),
 		...getExports(group, (name) => `${__("Export")} ${name}`),
 		{
 			name: "plugin-hsv-color",
@@ -49,7 +51,7 @@ const group = __("Plugins"),
 			group,
 			load: async () => {
 				const { loadHsvColorPlugin } = await import(
-					"tsparticles-plugin-hsv-color"
+					"@tsparticles/plugin-hsv-color"
 					);
 
 				await loadHsvColorPlugin();
@@ -61,7 +63,7 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadInfectionPlugin } = await import(
-					"tsparticles-plugin-infection"
+					"@tsparticles/plugin-infection"
 					);
 
 				await loadInfectionPlugin(engine);
@@ -73,7 +75,7 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadMotionPlugin } = await import(
-					"tsparticles-plugin-motion"
+					"@tsparticles/plugin-motion"
 					);
 
 				await loadMotionPlugin(engine);
@@ -85,7 +87,7 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadPolygonMaskPlugin } = await import(
-					"tsparticles-plugin-polygon-mask"
+					"@tsparticles/plugin-polygon-mask"
 					);
 
 				await loadPolygonMaskPlugin(engine);
@@ -97,7 +99,7 @@ const group = __("Plugins"),
 			group,
 			load: async (engine) => {
 				const { loadSoundsPlugin } = await import(
-					"tsparticles-plugin-sounds"
+					"@tsparticles/plugin-sounds"
 					);
 
 				await loadSoundsPlugin(engine);

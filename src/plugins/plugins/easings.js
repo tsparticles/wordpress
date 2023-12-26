@@ -8,7 +8,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingBackPlugin } = await import(
-					'tsparticles-plugin-easing-back'
+					'@tsparticles/plugin-easing-back'
 					);
 
 				await loadEasingBackPlugin(engine);
@@ -20,7 +20,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingCircPlugin } = await import(
-					'tsparticles-plugin-easing-circ'
+					'@tsparticles/plugin-easing-circ'
 					);
 
 				await loadEasingCircPlugin(engine);
@@ -32,7 +32,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingCubicPlugin } = await import(
-					'tsparticles-plugin-easing-cubic'
+					'@tsparticles/plugin-easing-cubic'
 					);
 
 				await loadEasingCubicPlugin(engine);
@@ -44,10 +44,22 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingExpoPlugin } = await import(
-					'tsparticles-plugin-easing-expo'
+					'@tsparticles/plugin-easing-expo'
 					);
 
 				await loadEasingExpoPlugin(engine);
+			},
+		},
+		{
+			name: 'plugin-easing-linear',
+			description: localizeFn(__('Linear')),
+			group,
+			load: async (engine) => {
+				const { loadEasingLinearPlugin } = await import(
+					'@tsparticles/plugin-easing-linear'
+					);
+
+				await loadEasingLinearPlugin(engine);
 			},
 		},
 		{
@@ -56,7 +68,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingQuadPlugin } = await import(
-					'tsparticles-plugin-easing-quad'
+					'@tsparticles/plugin-easing-quad'
 					);
 
 				await loadEasingQuadPlugin(engine);
@@ -68,7 +80,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingQuartPlugin } = await import(
-					'tsparticles-plugin-easing-quart'
+					'@tsparticles/plugin-easing-quart'
 					);
 
 				await loadEasingQuartPlugin(engine);
@@ -80,7 +92,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingQuintPlugin } = await import(
-					'tsparticles-plugin-easing-quint'
+					'@tsparticles/plugin-easing-quint'
 					);
 
 				await loadEasingQuintPlugin(engine);
@@ -92,7 +104,7 @@ export function getEasings(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadEasingSinePlugin } = await import(
-					'tsparticles-plugin-easing-sine'
+					'@tsparticles/plugin-easing-sine'
 					);
 
 				await loadEasingSinePlugin(engine);

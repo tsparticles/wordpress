@@ -1,4 +1,4 @@
-import { tsParticles } from 'tsparticles-engine';
+import { tsParticles } from '@tsparticles/engine';
 import { loadWordpressParticles } from './load';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 	await loadWordpressParticles(tsParticles, plugins);
 
 	for (const el of els) {
-		await tsParticles.load(el.id, JSON.parse(el.dataset.options));
+		await tsParticles.load({
+			id: el.id,
+			options: JSON.parse(el.dataset.options)
+		});
 	}
 });

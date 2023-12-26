@@ -8,7 +8,7 @@ const group = __('Movers'),
 			description: __('Base'),
 			group,
 			load: async (engine) => {
-				const { loadBaseMover } = await import('tsparticles-move-base');
+				const { loadBaseMover } = await import('@tsparticles/move-base');
 
 				await loadBaseMover(engine);
 			},
@@ -19,7 +19,7 @@ const group = __('Movers'),
 			group,
 			load: async (engine) => {
 				const { loadParallaxMover } = await import(
-					'tsparticles-move-parallax'
+					'@tsparticles/move-parallax'
 				);
 
 				await loadParallaxMover(engine);

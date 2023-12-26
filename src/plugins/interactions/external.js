@@ -8,7 +8,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalAttractInteraction } = await import(
-					'tsparticles-interaction-external-attract'
+					'@tsparticles/interaction-external-attract'
 				);
 
 				await loadExternalAttractInteraction(engine);
@@ -20,7 +20,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalBounceInteraction } = await import(
-					'tsparticles-interaction-external-bounce'
+					'@tsparticles/interaction-external-bounce'
 				);
 
 				await loadExternalBounceInteraction(engine);
@@ -32,7 +32,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalBubbleInteraction } = await import(
-					'tsparticles-interaction-external-bubble'
+					'@tsparticles/interaction-external-bubble'
 				);
 
 				await loadExternalBubbleInteraction(engine);
@@ -44,7 +44,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalConnectInteraction } = await import(
-					'tsparticles-interaction-external-connect'
+					'@tsparticles/interaction-external-connect'
 				);
 
 				await loadExternalConnectInteraction(engine);
@@ -56,7 +56,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalGrabInteraction } = await import(
-					'tsparticles-interaction-external-grab'
+					'@tsparticles/interaction-external-grab'
 				);
 
 				await loadExternalGrabInteraction(engine);
@@ -68,10 +68,22 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalPauseInteraction } = await import(
-					'tsparticles-interaction-external-pause'
+					'@tsparticles/interaction-external-pause'
 				);
 
 				await loadExternalPauseInteraction(engine);
+			},
+		},
+		{
+			name: 'interaction-external-pop',
+			description: localizeFn(__('Pop')),
+			group,
+			load: async (engine) => {
+				const { loadExternalPopInteraction } = await import(
+					'@tsparticles/interaction-external-pop'
+					);
+
+				await loadExternalPopInteraction(engine);
 			},
 		},
 		{
@@ -80,7 +92,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalPushInteraction } = await import(
-					'tsparticles-interaction-external-push'
+					'@tsparticles/interaction-external-push'
 				);
 
 				await loadExternalPushInteraction(engine);
@@ -92,7 +104,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalRemoveInteraction } = await import(
-					'tsparticles-interaction-external-remove'
+					'@tsparticles/interaction-external-remove'
 				);
 
 				await loadExternalRemoveInteraction(engine);
@@ -104,7 +116,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalRepulseInteraction } = await import(
-					'tsparticles-interaction-external-repulse'
+					'@tsparticles/interaction-external-repulse'
 				);
 
 				await loadExternalRepulseInteraction(engine);
@@ -116,7 +128,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalSlowInteraction } = await import(
-					'tsparticles-interaction-external-slow'
+					'@tsparticles/interaction-external-slow'
 				);
 
 				await loadExternalSlowInteraction(engine);
@@ -128,7 +140,7 @@ export function getExternalInteractions(group, localizeFn) {
 			group,
 			load: async (engine) => {
 				const { loadExternalTrailInteraction } = await import(
-					'tsparticles-interaction-external-trail'
+					'@tsparticles/interaction-external-trail'
 				);
 
 				await loadExternalTrailInteraction(engine);
