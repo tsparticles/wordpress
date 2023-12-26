@@ -24,6 +24,9 @@
 		"version": "node ./scripts/postversion.js && git add src/block.json && git add readme.txt && git add wordpress-particles.php",
 		"prepack": "pnpm run build"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"dependencies": {
 		"@tsparticles/all": "^3.0.2",
 		"@tsparticles/basic": "^3.0.2",
