@@ -61,6 +61,92 @@ Nothing to say
 
 == Changelog ==
 
+= 3.0.0
+
+## BREAKING CHANGES
+
+- Removed all tsParticles `load` methods to keep only a single one using a single `object` parameter
+- Removed support for shape deprecated properties like `shape.image`, `shape.polygon`, `shape.stroke`
+    - the stroke property can be found in the `particles section`, not in the `shape` object
+    - the image and polygon properties, like any other shape, are part of the `shape.options` object
+- Stroke now is a single object only like all the other particles properties
+- Removed multiline text shape, the text shape now supports that
+- Simplified some functions, using objects or removing unused overloads, this is breaking for v2 shapes
+- Moved some properties to private since they were public by mistake (this shouldn't affect many, the properties were mainly used in the engine)
+- Removed obsolete random properties in options objects
+- Removed emitters shapes from the plugin files, every emitters shape now has a dedicated package
+
+### Major Changes
+
+- All the components for Front End frameworks were removed from this repository, each one now has its own repository. This is mainly for maintainability. It's easier to support multiple Front End frameworks versions in a dedicated repository instead of a multipurpose monorepository. Vue.js 2.x and 3.x were kept split because they have many differences.
+    - Angular (`@tsparticles/angular`): https://github.com/tsparticles/angular (v3 under development)
+    - Astro (`@tsparticles/astro`): https://github.com/tsparticles/astro (v3 under development)
+    - Ember (`@tsparticles/ember`): https://github.com/tsparticles/ember (v3 under development)
+    - Inferno (`@tsparticles/inferno`): https://github.com/tsparticles/inferno (v3 under development)
+    - jQuery (`@tsparticles/jquery`): https://github.com/tsparticles/jquery (v3 under development)
+    - Lit (`@tsparticles/lit`): https://github.com/tsparticles/lit (v3 under development)
+    - Preact (`@tsparticles/preact`): https://github.com/tsparticles/preact (v3 under development)
+    - React (`@tsparticles/react`): https://github.com/tsparticles/react (v3 under development)
+    - Riot (`@tsparticles/riot`): https://github.com/tsparticles/riot (v3 under development)
+    - Solid (`@tsparticles/solid`): https://github.com/tsparticles/solid (v3 under development)
+    - Svelte (`@tsparticles/svelte`): https://github.com/tsparticles/svelte (v3 under development)
+    - Vue.js (`@tsparticles/vue`): https://github.com/tsparticles/vue (v3 under development)
+    - Web Components (`@tsparticles/webcomponents`): https://github.com/tsparticles/webcomponents (v3 under development)
+    - WordPress (`@tsparticles/wordpress`): https://github.com/tsparticles/wordpress (v3 under development)
+- Removed all presets from this repository for a single one (<https://github.com/tsparticles/presets>) in the @tsparticles organization, this will make easier to contribute to specific presets or create new ones. (Renaming them to `@tsparticles/preset-<name>` #3977)
+- All the previous packages will be deprecated when v3 will come out. Using only the new naming system is the main focus of v3. All the official packages will have `@tsparticles/` organization in the package name, replacing `tsparticles-` prefix, except for `tsparticles` package which will remain the same.
+- Moved editor to its own repository: https://github.com/tsparticles/editor
+- Pjs package now supports all the legacy pjs options only. This will make this package a wrapper for old pjs users. You can't use tsParticles options in pjs calls.
+- Pjs package is no longer part of `@tsparticles/slim` bundle, only included in `@tsparticles/all`.
+- Text shape is no longer part of `@tsparticles/slim` bundle, included in `tsparticles`.
+- Emoji shape is now part of `@tsparticles/slim` bundle.
+
+### Bug Fixes
+
+- Fixed bug when using particles groups
+- Fixed pool on particles destroyed by updaters
+- Fixed out modes, bounce was not checking the direction of the update request
+- Fixed issue with change theme when an existing canvas is used
+- Fixed updates on particles destroyed by updaters, that section wasn't using the memory pool for reusing old particles instead of creating new ones.
+- Fixed memory leak in destroyed particles by updaters, the z array wasn't filtered, thanks to @longnguyen2004, closes #5101
+- Fixed light interaction, particle shadow wasn't calculated correctly
+- Improved resize event and density formula
+- Fixed trails config
+- Fixed flat output in [@tsparticles/confetti](https://npmjs.com/package/@tsparticles/confetti)
+- Improved sounds plugin
+- Fixed position in emitters after respawn
+
+### New Features
+
+- Added new EventType particleDestroyed
+- Replaced text shape with emoji shape in [@tsparticles/confetti](https://npmjs.com/package/@tsparticles/confetti)
+- Reworked [@tsparticles/fireworks](https://npmjs.com/package/@tsparticles/fireworks) a bit for better output with the new v3 trails
+- Added range values to life duration and delay of emitters
+- Added two new bundles
+    - `@tsparticles/basic`: minimum plugins for having circular dots moving in the canvas, common package for all bundles, and presets after this is released. Packages included:
+        - `@tsparticles/engine`
+        - `@tsparticles/move-base`
+        - `@tsparticles/shape-circle`
+        - `@tsparticles/updater-color`
+        - `@tsparticles/updater-opacity`
+        - `@tsparticles/updater-out-modes`
+        - `@tsparticles/updater-size`
+    - `@tsparticles/all`: a package that includes all the plugins, it's not a best practice to use this, but the easiest way for trying every feature available for sure. It will be used mainly in the [website](https://github.com/tsparticles/website).
+- Added event on config added to the engine
+- Added flat options to @tsparticles/confetti options
+- Creating support for effects, like bubble that wasn't a real shape
+- Added linear easing
+- Created new emitters shapes: Canvas, Path and Polygon
+- Created trail effect plugin, this one is a real trail drawn in the canvas, it works also in transparent backgrounds. It requires more resources since it's drawn calculating last N positions and not redrawing a semi-transparent canvas on itself, supports also fade.
+- Added pop click interaction
+- Added limit mode (breaking changes on limit options)
+- Added possibility to replace color and opacity for emitters shapes
+- Added more options for customizing noises values (only Simplex and Perlin paths)
+- Added curl noise path plugin
+- Created Simplex and Perlin noise packages from their path plugins, they can be used in multiple packages without duplication (Curl Noise path for example)
+- Added new emoji shape, better performance than text shape
+- Added clear flag to the root object, enabled by default, if disabled, the canvas won't be cleared
+
 = 2.11.0
 
 ## Bug Fixes
