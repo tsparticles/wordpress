@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const packageInfo = require('../package.json');
 const readmeFilePath = './readme.txt';
-const blockPath = '../src/block.json';
+const blockPath = './src/block.json';
 
 fs.readFile(readmeFilePath, function (error, data) {
 	if (error) {
