@@ -24,7 +24,6 @@ Official Social Channels:
 
 - [GitHub](https://github.com/matteobruni/tsparticles)
 - [Discord](https://discord.gg/hACwv45Hme)
-- [Slack](https://join.slack.com/t/tsparticles/shared_invite/enQtOTcxNTQxNjQ4NzkxLWE2MTZhZWExMWRmOWI5MTMxNjczOGE1Yjk0MjViYjdkYTUzODM3OTc5MGQ5MjFlODc4MzE0N2Q1OWQxZDc1YzI)
 - [Telegram](https://t.me/tsparticles)
 - [Reddit](https://www.reddit.com/r/tsParticles/)
 - [Twitter](https://www.twitter.com/r/tsParticles/)
@@ -46,7 +45,6 @@ There are some ways to ask for support:
 
 - [Official tsParticles GitHub](https://github.com/matteobruni/tsparticles)
 - [Official tsParticles Discord](https://discord.gg/hACwv45Hme)
-- [Official tsParticles Slack](https://join.slack.com/t/tsparticles/shared_invite/enQtOTcxNTQxNjQ4NzkxLWE2MTZhZWExMWRmOWI5MTMxNjczOGE1Yjk0MjViYjdkYTUzODM3OTc5MGQ5MjFlODc4MzE0N2Q1OWQxZDc1YzI)
 - [Official tsParticles Telegram](https://t.me/tsparticles)
 - [Official tsParticles Reddit](https://www.reddit.com/r/tsParticles/)
 - In this plugin support forum
