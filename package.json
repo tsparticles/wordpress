@@ -13,8 +13,11 @@
 		"wordpress-particles.php"
 	],
 	"scripts": {
-		"build": "wp-scripts build",
-		"build:ci": "wp-scripts build",
+		"build": "pnpm run build:package",
+		"build:ci": "pnpm run build:package",
+		"build:lerna": "lerna run build --stream --no-private || pnpm run build:package",
+		"build:nx": "nx run-many -t build --all || pnpm run build:package",
+		"build:package": "wp-scripts build",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
@@ -142,6 +145,8 @@
 		"@wordpress/scripts": "^26.19.0",
 		"fs-extra": "^11.2.0",
 		"gulp": "^4.0.2",
+		"lerna": "^8.2.4",
+		"nx": "^20.7.2",
 		"postcss": "^8.4.32",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
